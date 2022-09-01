@@ -1,0 +1,55 @@
+/* box model(universal selector - *),fonts,etc..
+*/
+* {
+    padding: 10px;
+    border: 2px solid rgb(115, 53, 46);
+    margin: 10px;
+}
+
+/* class grid aproach */
+.GridContainer {
+    display: grid;
+    background-color: grey;
+    grid-template-areas: 
+    "Gheader Gheader"
+    "Gleft Gright";
+}
+.GridHeader {
+    grid-area: Gheader;
+    background-color: lightcoral;
+    font-size: 20px;
+    animation-name: SizeUp;
+}
+
+.GridLeft {
+    grid-area: Gleft;
+    background-color: lightpink;
+}
+
+.GridRight {
+    grid-area: Gright;
+    background-color: lightsalmon;
+}
+
+/* אנימציה- שינוי של תכונה:גודל,צבע,צבע רקע */
+
+@keyframes SizeUp {
+    0% {font-size: 20px;}
+    50% {font-size: 30px;}
+    100% {font-size: 20px;}
+
+}
+
+/* Media-  אפשר להסתכל בגוגל את הגדלים של סמארטפון 
+קבענו כאן תנאי על המסך שבתוכו הדפדפן קורא את הקובץ כרגיל
+*/
+@media screen and (max-width: 600px){ 
+    .GridContainer {
+        display: grid;
+        background-color: rgb(184, 77, 77);
+        grid-template-areas: 
+        "Gheader"
+        "Gleft"
+        "Gright";
+    }
+}
